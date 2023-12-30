@@ -6,7 +6,7 @@ Release/*
 .gcc-flags.json
 .pio/
 .vscode/
-config.h
+secret.h
 mySetup.cpp
 myHal.cpp
 myFilter.cpp

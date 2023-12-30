@@ -17,6 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////////////
 
 #if __has_include ( "config.h")
+  #include "secret.h"
   #include "config.h"
   #ifndef MOTOR_SHIELD_TYPE
   #error Your config.h must include a MOTOR_SHIELD_TYPE definition. If you see this warning in spite not having a config.h, you have a buggy preprocessor and must copy config.example.h to config.h
