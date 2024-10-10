@@ -25,6 +25,7 @@
 #include "DIAG.h" 
 #include "FSH.h"
 #include "IO_MCP23017.h"
+#include "IO_PCF8574.h"
 #include "DCCTimer.h"
 
 #if defined(ARDUINO_ARCH_AVR) || defined(ARDUINO_ARCH_MEGAAVR)
@@ -76,18 +77,24 @@ void IODevice::begin() {
     DIAG(F("Default PCA9685 at I2C 0x41 disabled due to configured user device"));
   }
   
+  // // Define PCF8574 IO expander for turnouts (added by MvL)
+  // PCF8574::create(164, 8, 0x20);
+  // // set enable pins low/off
+  // IODevice::write(168, 0);
+  // IODevice::write(169, 0);
+  
   // Predefine two MCP23017 module 0x20/0x21 if no conflicts
   // Allocates 32 pins 164-195
-  if (checkNoOverlap(164, 16, 0x20)) {
-    MCP23017::create(164, 16, 0x20);
-  } else {
-    DIAG(F("Default MCP23017 at I2C 0x20 disabled due to configured user device"));
-  }
-  if (checkNoOverlap(180, 16, 0x21)) {
-    MCP23017::create(180, 16, 0x21);
-  } else {
-    DIAG(F("Default MCP23017 at I2C 0x21 disabled due to configured user device"));
-  }
+  // if (checkNoOverlap(164, 16, 0x20)) {
+  //   MCP23017::create(164, 16, 0x20);
+  // } else {
+  //   DIAG(F("Default MCP23017 at I2C 0x20 disabled due to configured user device"));
+  // }
+  // if (checkNoOverlap(180, 16, 0x21)) {
+  //   MCP23017::create(180, 16, 0x21);
+  // } else {
+  //   DIAG(F("Default MCP23017 at I2C 0x21 disabled due to configured user device"));
+  // }
 }
 
 // reset() function to reinitialise all devices
