@@ -7,9 +7,4 @@ Release/*
 .pio/
 .vscode/
 secret.h
-mySetup.cpp
-myHal.cpp
-myFilter.cpp
-my*.h
-!my*.example.h
 compile_commands.json
