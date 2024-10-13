@@ -1,3 +1,12 @@
+// Define Buttons
+ALIAS(BT1_SW, 200)
+ALIAS(BT1_LED, 201)
+SIGNALH(BT1_LED, 0, 0)
+
+// Turn on BT LEDs
+RED(BT1_LED)
+
+// Define Turnouts
 #define PULSE 20    // Set the duration of the pulse to 10ms
 
 #define DUAL_COIL_TURNOUT(id, en, in1, in2, desc) \
@@ -15,11 +24,4 @@ DONE
 DUAL_COIL_TURNOUT(1, 168, 164, 165, "Wissel A")
 DUAL_COIL_TURNOUT(2, 169, 166, 167, "Wissel B")
 
-
-AT(200)
-SIGNALH(201, 0, 0)
-RED(201)
-
-ONCHANGE(200)
-    RED(201)
 

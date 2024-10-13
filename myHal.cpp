@@ -18,7 +18,7 @@
 // Include devices you need.
 #include "IODevice.h"
 //#include "IO_HALDisplay.h"  // Auxiliary display devices (LCD/OLED)
-#include "IO_HCSR04.h"    // Ultrasonic range sensor
+//#include "IO_HCSR04.h"    // Ultrasonic range sensor
 #include "IO_VL53L0X.h"   // Laser time-of-flight sensor
 //#include "IO_DFPlayer.h"  // MP3 sound player
 //#include "IO_TouchKeypad.h  // Touch keypad with 16 keys
