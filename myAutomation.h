@@ -1,10 +1,14 @@
 // Define Buttons
-ALIAS(BT1_SW, 200)
-ALIAS(BT1_LED, 201)
+ALIAS(BT1_SW, 170)
+ALIAS(BT1_LED, 171)
 SIGNALH(BT1_LED, 0, 0)
 
 // Turn on BT LEDs
 RED(BT1_LED)
+
+DELAY(1000)
+
+GREEN(BT1_LED)
 
 // Define Turnouts
 #define PULSE 20    // Set the duration of the pulse to 10ms
