@@ -4,7 +4,7 @@ ALIAS(BT1_LED, 171)
 //SIGNALH(BT1_LED, 0, 0)
 
 // Turn on BT LEDs
-RESET(BT1_LED)
+SET(BT1_LED)
 
 
 // Define Turnouts
