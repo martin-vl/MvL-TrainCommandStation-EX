@@ -5,12 +5,13 @@ ALIAS(BTN1)
 //SIGNALH(BT1_LED, 0, 0)
 
 // Turn on BT LEDs
-SEQUENCE(BTN1)
-    IF(20)
-        SET(21)
-    ELSE
-        RESET(21)
-    FOLLOW(BTN1)
+ONACTIVATEL(20)
+    SET(21)
+    DONE
+
+ONDEACTIVATEL(20)    
+    RESET(21)
+    DONE
 
 
 // Define Turnouts
