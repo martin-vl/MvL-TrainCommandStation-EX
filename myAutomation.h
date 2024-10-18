@@ -1,15 +1,15 @@
 // Define Buttons
-ALIAS(BT1_SW, 20)
-ALIAS(BT1_LED, 21)
+//ALIAS(BT1_SW, 20)
+//ALIAS(BT1_LED, 21)
 //SIGNALH(BT1_LED, 0, 0)
 
 // Turn on BT LEDs
-AT(BT1_SW) \
-SET(BT1_LED) \
+AT(20) \
+SET(21) \
 DONE
 
-AT(-BT1_SW) \
-RESET(BT1_LED) \
+AT(-20) \
+RESET(21) \
 DONE
 
 // Define Turnouts
