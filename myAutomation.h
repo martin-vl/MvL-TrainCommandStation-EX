@@ -11,13 +11,7 @@ DELAY(1000)
 RESET(171)
 DELAY(1000) 
 
-ONACTIVATEL(BT1_SW)
-    SET(171)
-    DONE
 
-ONDEACTIVATEL(BT1_SW)
-    RESET(171)
-    DONE
 
 // Define Turnouts
 #define PULSE 20    // Set the duration of the pulse to 10ms
@@ -45,10 +39,12 @@ DONE
 
 // Turn on BT LEDs
 SEQUENCE(BTN1)
-    SET(171)
-    DELAY(1000)    
-    RESET(171)
-    DELAY(1000) 
+    IF(BT1_SW)
+        SET(171)
+    ELSE
+        RESET(171)
+    ENDIF
+    DELAY(100) 
     FOLLOW(BTN1)
 
 
