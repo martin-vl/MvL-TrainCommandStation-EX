@@ -5,7 +5,7 @@ ALIAS(BTN1)
 //SIGNALH(BT1_LED, 0, 0)
 
 
-
+RESET(21)
 
 // Define Turnouts
 #define PULSE 20    // Set the duration of the pulse to 10ms
