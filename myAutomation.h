@@ -39,7 +39,7 @@ DONE
 
 // Turn on BT LEDs
 SEQUENCE(BTN1)
-    IF(BT1_SW)
+    IF(-170)
         SET(171)
     ELSE
         RESET(171)
