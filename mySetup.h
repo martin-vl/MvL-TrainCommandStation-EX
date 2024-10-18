@@ -6,7 +6,7 @@ IODevice::write(169, 0);
 SETUP("<= A DC 1>");
 // Create input buttons
 SETUP("<S 20 170 pullup>");
-// Create output LEDs for buttons
-SETUP("<Z 21 171 100>");
+// Create output LEDs for buttons iflag=011 inverted reset at power up
+SETUP("<Z 21 171 3>");
 
 Sensor::create(5000, 5000, 0);
