@@ -5,7 +5,7 @@ ALIAS(BTN1)
 //SIGNALH(BT1_LED, 0, 0)
 
 
-RESET(21)
+RESET(171)
 
 // Define Turnouts
 #define PULSE 20    // Set the duration of the pulse to 10ms
@@ -31,8 +31,8 @@ DONE
 
 // Turn on BT LEDs
 SEQUENCE(BTN1)
-    SET(21)
+    SET(171)
     DELAY(1000)    
-    RESET(21)
+    RESET(171)
     DELAY(1000) 
     FOLLOW(BTN1)
