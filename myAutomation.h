@@ -4,13 +4,13 @@
 //SIGNALH(BT1_LED, 0, 0)
 
 // Turn on BT LEDs
-AT(20) \
-SET(21) \
-DONE
+SEQUENCE(BTN1)
+    IF(20)
+        SET(21)
+    ELSE
+        RESET(21)
+    FOLLOW(BTN1)
 
-AT(-20) \
-RESET(21) \
-DONE
 
 // Define Turnouts
 #define PULSE 20    // Set the duration of the pulse to 10ms
