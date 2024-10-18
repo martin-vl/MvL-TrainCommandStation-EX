@@ -4,14 +4,7 @@ ALIAS(BTN1)
 //ALIAS(BT1_LED, 21)
 //SIGNALH(BT1_LED, 0, 0)
 
-// Turn on BT LEDs
-ONACTIVATEL(20)
-    SET(21)
-    DONE
 
-ONDEACTIVATEL(20)    
-    RESET(21)
-    DONE
 
 
 // Define Turnouts
@@ -32,5 +25,13 @@ DONE
 DUAL_COIL_TURNOUT(1, 168, 164, 165, "Wissel A")
 DUAL_COIL_TURNOUT(2, 169, 166, 167, "Wissel B")
 
-//START(BTN1)
+START(BTN1)
 
+DONE
+
+// Turn on BT LEDs
+SEQUENCE(BTN1)
+    SET(21)
+    DELAY(1000)    
+    RESET(21)
+    FOLLOW(BTN1)
