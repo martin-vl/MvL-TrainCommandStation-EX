@@ -5,7 +5,11 @@ ALIAS(BTN1)
 //SIGNALH(BT1_LED, 0, 0)
 
 
+
+SET(171)
+DELAY(1000)    
 RESET(171)
+DELAY(1000) 
 
 // Define Turnouts
 #define PULSE 20    // Set the duration of the pulse to 10ms
@@ -25,9 +29,7 @@ DONE
 DUAL_COIL_TURNOUT(1, 168, 164, 165, "Wissel A")
 DUAL_COIL_TURNOUT(2, 169, 166, 167, "Wissel B")
 
-START(BTN1)
 
-DONE
 
 // Turn on BT LEDs
 SEQUENCE(BTN1)
@@ -36,3 +38,5 @@ SEQUENCE(BTN1)
     RESET(171)
     DELAY(1000) 
     FOLLOW(BTN1)
+
+START(BTN1)
