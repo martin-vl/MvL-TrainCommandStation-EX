@@ -4,8 +4,13 @@ ALIAS(BT1_LED, 171)
 //SIGNALH(BT1_LED, 0, 0)
 
 // Turn on BT LEDs
-SET(BT1_LED)
+IF(BT1_SW) \
+SET(BT1_LED) \
+ENDIF
 
+IFNOT(BT1_SW) \
+RESET(BT1_LED) \
+ENDIF
 
 // Define Turnouts
 #define PULSE 20    // Set the duration of the pulse to 10ms
