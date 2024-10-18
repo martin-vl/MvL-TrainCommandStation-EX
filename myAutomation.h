@@ -1,4 +1,5 @@
 // Define Buttons
+ALIAS(BTN1)
 //ALIAS(BT1_SW, 20)
 //ALIAS(BT1_LED, 21)
 //SIGNALH(BT1_LED, 0, 0)
