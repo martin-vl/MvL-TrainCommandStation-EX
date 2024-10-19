@@ -4,6 +4,10 @@ ALIAS(BT1_SW, 170)
 ALIAS(BT1_LED, 171)
 //SIGNALH(BT1_LED, 0, 0)
 
+// Define Turnouts (Wissels)
+ALIAS(WS1)
+ALIAS(WS2)
+
 // Define Routes
 ALIAS(RT1)
 ALIAS(RT2)
@@ -24,23 +28,25 @@ RESET(in1) SET(in2) \
 SET(en) DELAY(PULSE) RESET(en) \
 DONE
 
-DUAL_COIL_TURNOUT(1, 47, 39, 41, "Wissel A")
-DUAL_COIL_TURNOUT(2, 49, 43, 45, "Wissel B")
+DUAL_COIL_TURNOUT(WS1, 47, 39, 41, "Wissel A")
+DUAL_COIL_TURNOUT(WS2, 49, 43, 45, "Wissel B")
 
 // Define Routes
 ROUTE(RT1,"Station Platform 1")
-    THROW(1)
-    THROW(2)
+    THROW(WS1)
+    THROW(WS2)
     DONE
 
 ROUTE(RT2,"Station Platform 2")
-    CLOSE(1)
-    CLOSE(2)
+    CLOSE(WS1)
+    CLOSE(WS2)
     DONE
 
 
 
 AUTOSTART
+
+RESET(BT1_LED)
 
 START(BTN1)
 
@@ -48,10 +54,10 @@ DONE
 
 // Turn on BT LEDs
 SEQUENCE(BTN1)
-    IF(-BT1_SW)
-        SET(BT1_LED)
+    IFCLOSED(WS1)
+        CALL(RT1)
     ELSE
-        RESET(BT1_LED)
+        CALL(RT2)
     ENDIF
     DELAY(100) 
     FOLLOW(BTN1)
