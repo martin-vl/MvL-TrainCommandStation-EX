@@ -195,7 +195,7 @@ void halSetup() {
   //   Maximum trigger range=250mm (VPIN goes to 0 when >25cm)
 
   //VL53L0X::create(5000, 1, 0x29, 200, 250); 
-  VL53L0X::create(5000, 1, 0x29, 30, 100);
+  VL53L0X::create(5000, 1, 0x52, 30, 100);
 
   // For multiple VL53L0X modules, add another parameter which is a VPIN connected to the
   // module's XSHUT pin.  This allows the modules to be configured, at start,
