@@ -20,9 +20,8 @@ RESET(in1) SET(in2) \
 SET(en) DELAY(PULSE) RESET(en) \
 DONE
 
-DUAL_COIL_TURNOUT(1, 47, 164, 165, "Wissel A")
-DUAL_COIL_TURNOUT(2, 49, 166, 167, "Wissel B")
-
+DUAL_COIL_TURNOUT(1, 47, 39, 41, "Wissel A")
+DUAL_COIL_TURNOUT(2, 49, 43, 45, "Wissel B")
 
 
 
