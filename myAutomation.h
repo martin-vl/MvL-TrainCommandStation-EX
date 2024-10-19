@@ -12,9 +12,12 @@ ALIAS(WS2)
 ALIAS(RT1)
 ALIAS(RT2)
 
+// Define locs
+ROSTER(1,"Loco","DC")
+
 
 // Define Turnouts
-#define PULSE 1000    // Set the duration of the pulse to 10ms
+#define PULSE 100    // Set the duration of the pulse to 10ms
 
 #define DUAL_COIL_TURNOUT(id, en, in1, in2, desc) \
 VIRTUAL_TURNOUT(id, desc) \
@@ -48,9 +51,9 @@ ROUTE(RT2,"Station Platform 2")
 
 AUTOSTART
 
-RESET(BT1_LED)
-
 START(BTN1)
+
+RESET(BT1_LED)
 
 DONE
 
