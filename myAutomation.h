@@ -6,7 +6,7 @@ ALIAS(BT1_LED, 171)
 
 
 // Define Turnouts
-#define PULSE 20    // Set the duration of the pulse to 10ms
+#define PULSE 40    // Set the duration of the pulse to 10ms
 
 #define DUAL_COIL_TURNOUT(id, en, in1, in2, desc) \
 VIRTUAL_TURNOUT(id, desc) \
