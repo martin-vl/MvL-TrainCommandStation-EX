@@ -61,7 +61,7 @@ SEQUENCE(BTN1)
         IFCLOSED(WS1)
             CALL(RT1)
         ENDIF
-        IFTROWN(WS1)
+        IFTHROWN(WS1)
             CALL(RT2)
         ENDIF
         DELAY(1000)
