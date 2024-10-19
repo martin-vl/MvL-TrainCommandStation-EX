@@ -1,7 +1,7 @@
 // Define Buttons
 ALIAS(BTN1)
-ALIAS(BT1_SW, 20)
-//ALIAS(BT1_LED, 21)
+ALIAS(BT1_SW, 170)
+ALIAS(BT1_LED, 171)
 //SIGNALH(BT1_LED, 0, 0)
 
 
@@ -28,25 +28,16 @@ DUAL_COIL_TURNOUT(2, 169, 166, 167, "Wissel B")
 
 AUTOSTART
 
-ONCHANGE(BT1_SW)
-    IF(-170)
-        SET(171)
-    ELSE
-        RESET(171)
-    ENDIF
-    DONE
-
-
-//START(BTN1)
+START(BTN1)
 
 DONE
 
 // Turn on BT LEDs
 SEQUENCE(BTN1)
-    IF(-170)
-        SET(171)
+    IF(-BT1_SW)
+        SET(BT1_LED)
     ELSE
-        RESET(171)
+        RESET(BT1_LED)
     ENDIF
     DELAY(100) 
     FOLLOW(BTN1)
