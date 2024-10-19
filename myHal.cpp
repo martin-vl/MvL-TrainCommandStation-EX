@@ -141,7 +141,7 @@ void halSetup() {
   //PCF8574::create(200, 8, 0x23);
     // Define PCF8574 IO expander for turnouts (added by MvL)
   PCF8574::create(164, 8, 0x20);
-  PCF8574::create(200, 8, 0x21);
+  //PCF8574::create(200, 8, 0x21);
 
 
 
@@ -196,7 +196,7 @@ void halSetup() {
 
   //VL53L0X::create(5000, 1, 0x29, 200, 250); 
   VL53L0X::create(5000, 1, 0x29, 200, 250);
-  VL53L0X::create(5001, 1, 0x52, 200, 250);
+  //VL53L0X::create(5001, 1, 0x52, 200, 250);
 
   // For multiple VL53L0X modules, add another parameter which is a VPIN connected to the
   // module's XSHUT pin.  This allows the modules to be configured, at start,
