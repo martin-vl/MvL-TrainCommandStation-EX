@@ -11,3 +11,4 @@ SETUP("<Z 21 171 3>");
 // Setup time of flight sensor
 //SETUP("<S 5000 5000 0>");
 Sensor::create(5000, 5000, 0);
+Sensor::create(5001, 5001, 0);
