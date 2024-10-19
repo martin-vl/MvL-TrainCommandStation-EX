@@ -60,8 +60,7 @@ SEQUENCE(BTN1)
         SET(BT1_LED)
         IFCLOSED(WS1)
             CALL(RT1)
-        ENDIF
-        IFTHROWN(WS1)
+        ELSE
             CALL(RT2)
         ENDIF
         DELAY(1000)
