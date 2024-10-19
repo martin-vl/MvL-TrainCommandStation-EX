@@ -34,11 +34,13 @@ DUAL_COIL_TURNOUT(WS2, 49, 43, 45, "Wissel B")
 // Define Routes
 ROUTE(RT1,"Station Platform 1")
     THROW(WS1)
+    DELAY(PULSE)
     THROW(WS2)
     DONE
 
 ROUTE(RT2,"Station Platform 2")
     CLOSE(WS1)
+    DELAY(PULSE)
     CLOSE(WS2)
     DONE
 
@@ -55,9 +57,15 @@ DONE
 // Turn on BT LEDs
 SEQUENCE(BTN1)
     IFCLOSED(WS1)
+        SET(BT1_LED)
         CALL(RT1)
+        DELAY(1000)
+        RESET(BT1_LED)
     ELSE
+        SET(BT1_LED)
         CALL(RT2)
+        DELAY(1000)
+        RESET(BT1_LED)
     ENDIF
     DELAY(100) 
     FOLLOW(BTN1)
