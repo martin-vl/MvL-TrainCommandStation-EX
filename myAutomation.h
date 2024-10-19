@@ -66,7 +66,7 @@ SEQUENCE(BTN1)
         ELSE
             CALL(RT2)
         ENDIF
-        DELAY(1000)
+        DELAY(5000)
         RESET(BT1_LED)
     ENDIF
     DELAY(100) 
