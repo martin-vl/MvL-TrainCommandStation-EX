@@ -5,7 +5,7 @@ ALIAS(BT1_LED, 171)
 //SIGNALH(BT1_LED, 0, 0)
 
 // Define IrSensors
-ALIA(IR1, 164)
+ALIAS(IR1, 164)
 
 // Define Turnouts (Wissels)
 ALIAS(WS1)
@@ -53,6 +53,9 @@ ROUTE(RT2,"Station Platform 2")
 
 
 AUTOSTART
+
+// Set turnouts
+CALL(RT1)
 
 START(BTN1)
 
