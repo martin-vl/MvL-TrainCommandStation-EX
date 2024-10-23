@@ -55,7 +55,7 @@ ROUTE(RT2,"Station Platform 2")
 AUTOSTART
 
 // Set turnouts
-CALL(RT1)
+CALL(RT2)
 
 START(BTN1)
 
