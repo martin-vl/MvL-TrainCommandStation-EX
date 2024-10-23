@@ -19,7 +19,7 @@
 #include "IODevice.h"
 //#include "IO_HALDisplay.h"  // Auxiliary display devices (LCD/OLED)
 //#include "IO_HCSR04.h"    // Ultrasonic range sensor
-#include "IO_VL53L0X.h"   // Laser time-of-flight sensor
+//#include "IO_VL53L0X.h"   // Laser time-of-flight sensor
 //#include "IO_DFPlayer.h"  // MP3 sound player
 //#include "IO_TouchKeypad.h  // Touch keypad with 16 keys
 //#include "IO_EXTurntable.h"   // Turntable-EX turntable controller
@@ -195,7 +195,7 @@ void halSetup() {
   //   Maximum trigger range=250mm (VPIN goes to 0 when >25cm)
 
   //VL53L0X::create(5000, 1, 0x29, 200, 250); 
-  VL53L0X::create(5000, 1, 0x29, 30, 200);
+  //VL53L0X::create(5000, 1, 0x29, 30, 200);
   //VL53L0X::create(5001, 1, 0x52, 200, 250);
 
   // For multiple VL53L0X modules, add another parameter which is a VPIN connected to the
