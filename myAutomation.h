@@ -15,6 +15,9 @@ ALIAS(WS2)
 ALIAS(RT1)
 ALIAS(RT2)
 
+// Define Automations
+ALIAS(AUTO1)
+
 // Define locs
 ROSTER(1,"Loco","DC")
 
@@ -80,4 +83,9 @@ SEQUENCE(BTN1)
     DELAY(100) 
     FOLLOW(BTN1)
 
-
+AUTOMATION(AUTO1, "Test Automation")
+    FWD(60)
+    AT(IR1)
+    STOP
+    DELAYRANDOM(3000,10000)
+    FOLLOW(AUTO1)
