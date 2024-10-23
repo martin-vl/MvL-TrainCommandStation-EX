@@ -84,7 +84,8 @@ SEQUENCE(BTN1)
     FOLLOW(BTN1)
 
 AUTOMATION(AUTO1, "Test Automation")
-    FWD(60)
+    FWD(75)
+    AFTER(IR1)
     AT(IR1)
     STOP
     DELAYRANDOM(3000,10000)
