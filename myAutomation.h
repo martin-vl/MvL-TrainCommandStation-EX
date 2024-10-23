@@ -23,7 +23,7 @@ ROSTER(1,"Loco","DC")
 
 
 // Define Turnouts
-#define PULSE 100    // Set the duration of the pulse to 10ms
+#define PULSE 50    // Set the duration of the pulse to 10ms
 
 #define DUAL_COIL_TURNOUT(id, en, in1, in2, desc) \
 VIRTUAL_TURNOUT(id, desc) \
@@ -58,9 +58,15 @@ ROUTE(RT2,"Station Platform 2")
 AUTOSTART
 
 // Set turnouts
-CALL(RT2)
+THROW(WS1)
 DELAY(PULSE)
-CALL(RT2)
+CLOSE(WS1)
+DELAY(PULSE)
+
+CLOSE(WS2)
+DELAY(PULSE)
+THROW(WS2)
+DELAY(PULSE)
 
 START(BTN1)
 
@@ -84,10 +90,8 @@ SEQUENCE(BTN1)
     FOLLOW(BTN1)
 
 AUTOMATION(AUTO1, "Test Automation")
-    FWD(75)
+    FWD(40)
     AFTER(IR1)
-    STOP
-    DELAYRANDOM(3000,10000)
     FWD(75)
     AT(IR1)
     STOP
