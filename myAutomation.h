@@ -56,6 +56,8 @@ AUTOSTART
 
 // Set turnouts
 CALL(RT2)
+DELAY(PULSE)
+CALL(RT2)
 
 START(BTN1)
 
