@@ -57,7 +57,12 @@ The configuration file for DCC-EX Command Station
 //   |
 //   +-----------------------v
 //
-#define MOTOR_SHIELD_TYPE STANDARD_MOTOR_SHIELD
+// Distribution board swaps D3/D4 at the motor-shield connector.
+// Track A enable is therefore Mega D4; other Rev3 shield pins are unchanged.
+#define MVL_MOTOR_SHIELD F("MVL_MOTOR_SHIELD"), \
+    new MotorDriver(4, 12, UNUSED_PIN, 9, A0, 2.99, 1500, UNUSED_PIN), \
+    new MotorDriver(11, 13, UNUSED_PIN, 8, A1, 2.99, 1500, UNUSED_PIN)
+#define MOTOR_SHIELD_TYPE MVL_MOTOR_SHIELD
 //
 /////////////////////////////////////////////////////////////////////////////////////
 //

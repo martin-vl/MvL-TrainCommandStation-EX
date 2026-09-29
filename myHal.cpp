@@ -108,7 +108,8 @@ void halSetup() {
   //   Number of VPINs=16 (numbered 196-211)
   //   I2C address of module=0x22
 
-  //MCP23017::create(196, 16, 0x22);
+  // Distribution board U4: GPA0-GPA7 = 164-171, GPB0-GPB7 = 172-179.
+  MCP23017::create(164, 16, 0x20);
 
 
   // Alternative form, which allows the INT pin of the module to request a scan
@@ -139,8 +140,6 @@ void halSetup() {
   //   I2C address of module=0x23
 
   //PCF8574::create(200, 8, 0x23);
-    // Define PCF8574 IO expander for turnouts (added by MvL)
-  PCF8574::create(164, 8, 0x20);
   //PCF8574::create(200, 8, 0x21);
 
 

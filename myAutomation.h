@@ -1,11 +1,13 @@
 // Define Buttons
 ALIAS(BTN1)
-ALIAS(BT1_SW, 170)
-ALIAS(BT1_LED, 171)
+ALIAS(BT1_SW, 173)  // BT1 switch: GPB1 (schematic D109)
+ALIAS(BT1_LED, 172) // BT1 LED: GPB0 (schematic D108)
 //SIGNALH(BT1_LED, 0, 0)
 
 // Define IrSensors
-ALIAS(IR1, 164)
+ALIAS(IR1, 33)     // IR1 connector: Mega D33
+ALIAS(IR9, 35)     // IR9 connector: Mega D35
+ALIAS(IR15, 29)
 
 // Define Turnouts (Wissels)
 ALIAS(WS1)
@@ -23,7 +25,7 @@ ROSTER(1,"Loco","DC")
 
 
 // Define Turnouts
-#define PULSE 50    // Set the duration of the pulse to 10ms
+#define PULSE 50    // Pulse duration in milliseconds
 
 #define DUAL_COIL_TURNOUT(id, en, in1, in2, desc) \
 VIRTUAL_TURNOUT(id, desc) \
@@ -37,8 +39,9 @@ RESET(in1) SET(in2) \
 SET(en) DELAY(PULSE) RESET(en) \
 DONE
 
-DUAL_COIL_TURNOUT(WS1, 47, 39, 41, "Wissel A")
-DUAL_COIL_TURNOUT(WS2, 49, 43, 45, "Wissel B")
+// Turnout Controller 1: enable, input A, input B.
+DUAL_COIL_TURNOUT(WS1, 44, 42, 38, "Wissel A")
+DUAL_COIL_TURNOUT(WS2, 34, 36, 40, "Wissel B")
 
 // Define Routes
 ROUTE(RT1,"Station Platform 1")
@@ -85,10 +88,12 @@ SEQUENCE(BTN1)
     FOLLOW(BTN1)
 
 AUTOMATION(AUTO1, "Test Automation")
+    FWD(60)
+    AFTER(IR9)
+    FWD(90)
+    AT(IR15)
     FWD(50)
-    AFTER(IR1)
-    FWD(75)
-    AT(IR1)
+    AT(IR9)
     STOP
     DELAYRANDOM(3000,10000)
     FOLLOW(AUTO1)
